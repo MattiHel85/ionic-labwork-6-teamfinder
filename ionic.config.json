@@ -1,0 +1,7 @@
+{
+  "name": "ionic-labwork-6-teamfinder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

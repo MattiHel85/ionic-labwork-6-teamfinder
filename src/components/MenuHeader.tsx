@@ -10,10 +10,10 @@ const MenuHeader: React.FC<ContainerProps> = () => {
     <>
        <IonHeader>
         <IonToolbar>
-          <IonTitle><h1><strong>TEAMFINDER</strong></h1></IonTitle>
+          <IonTitle class='header'><h1><strong>TEAMFINDER</strong></h1></IonTitle>
         </IonToolbar>
       </IonHeader>
-      
+
       <IonContent className="ion-padding"> 
 
         <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>

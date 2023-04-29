@@ -1,0 +1,15 @@
+
+
+ion-fab-button {
+    --background: #F37D0F;
+    --background-activated: #f8983e;
+    --background-hover: #c4640a;
+    --border-radius: 15px;
+    --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+      0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --color: black;
+  }
+
+  ion-fab-button {
+    width: 150px;
+}

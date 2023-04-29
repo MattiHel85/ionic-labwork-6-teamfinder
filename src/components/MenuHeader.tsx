@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonFab, IonFabButton, IonFabList, IonIcon, IonLabel } from '@ionic/react';
-import { add, colorPalette, document, globe } from 'ionicons/icons';
+import { add } from 'ionicons/icons';
 import './MenuHeader.css';
 
 interface ContainerProps { }
@@ -14,33 +14,30 @@ const MenuHeader: React.FC<ContainerProps> = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding"> 
-
-        <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>
-      <IonFabButton >
+  <IonContent className="ion-padding"> 
+    <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
+      <IonFabButton>
         <IonIcon icon={add}></IonIcon>
       </IonFabButton>
       <IonFabList side="bottom">
-        <IonFabButton>
-          <IonIcon icon={document}></IonIcon>
-          <IonLabel>Sign in</IonLabel>
+        <IonFabButton routerLink="/home">
+                <IonLabel>home</IonLabel>
         </IonFabButton>
-        <IonFabButton>
-          <IonIcon icon={colorPalette}></IonIcon>
-          <IonLabel>Sign in</IonLabel>
+        <IonFabButton routerLink="/signin">
+          <IonLabel>sign in</IonLabel>
         </IonFabButton>
-        <IonFabButton>
-          <IonIcon icon={globe}></IonIcon>
-          <IonLabel>Sign in</IonLabel>
+        <IonFabButton routerLink="/signup">
+          <IonLabel>sign up</IonLabel>
         </IonFabButton>
-        <IonFabButton>
-          <IonIcon icon={globe}></IonIcon>
-          <IonLabel>Sign in</IonLabel>
+        <IonFabButton routerLink="/showteams">
+          <IonLabel>show teams</IonLabel>
+        </IonFabButton>
+        <IonFabButton routerLink="/addteam">
+          <IonLabel>add team</IonLabel>
         </IonFabButton>
       </IonFabList>
     </IonFab>
-
-      </IonContent>
+  </IonContent>
   </>
   );
 };

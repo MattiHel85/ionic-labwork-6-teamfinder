@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonFab, IonFabButton, IonFabList, IonIcon, IonLabel } from '@ionic/react';
-import { add } from 'ionicons/icons';
+import { menu } from 'ionicons/icons';
 import './MenuHeader.css';
 
 interface ContainerProps { }
@@ -17,23 +17,23 @@ const MenuHeader: React.FC<ContainerProps> = () => {
   <IonContent className="ion-padding"> 
     <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
       <IonFabButton>
-        <IonIcon icon={add}></IonIcon>
+        <IonIcon icon={menu}></IonIcon>
       </IonFabButton>
       <IonFabList side="bottom">
         <IonFabButton routerLink="/home">
-                <IonLabel>home</IonLabel>
+              <IonLabel>home</IonLabel>
         </IonFabButton>
         <IonFabButton routerLink="/signin">
-          <IonLabel>sign in</IonLabel>
+               <IonLabel>sign in</IonLabel>
         </IonFabButton>
         <IonFabButton routerLink="/signup">
-          <IonLabel>sign up</IonLabel>
+              <IonLabel>sign up</IonLabel>
         </IonFabButton>
         <IonFabButton routerLink="/showteams">
-          <IonLabel>show teams</IonLabel>
+              <IonLabel>show teams</IonLabel>
         </IonFabButton>
         <IonFabButton routerLink="/addteam">
-          <IonLabel>add team</IonLabel>
+              <IonLabel>add team</IonLabel>
         </IonFabButton>
       </IonFabList>
     </IonFab>

@@ -8,7 +8,7 @@ ion-title {
     position: absolute;
     left: 10%;
     right: 10%;
-    top: 32%;
+    top: 31%;
     height: 250px;
     transform: translateY(-50%);
     background: rgb(239,234,229,0.56);
@@ -39,7 +39,7 @@ ion-title {
     position: absolute;
     left: 10%;
     right: 10%;
-    top: 67%;
+    top: 68%;
     height: 250px;
   /*  height: 200px; */
     transform: translateY(-50%);

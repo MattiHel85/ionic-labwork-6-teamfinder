@@ -26,7 +26,6 @@ const Home: React.FC = () => {
       </IonCardContent>
     </IonCard>
 
-
     </IonPage>
   );
 };

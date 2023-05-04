@@ -19,7 +19,7 @@ const MenuHeader: React.FC<ContainerProps> = () => {
         </IonToolbar>
       </IonHeader>
 
-  <IonContent className="ion-padding"> 
+  <IonContent className="ion-fab-content"> 
     <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
       <IonFabButton>
         <IonIcon icon={menu}></IonIcon>

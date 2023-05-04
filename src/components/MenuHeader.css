@@ -25,3 +25,7 @@ ion-fab-list {
 .header {
     background: #F37D0F;
     }
+
+ion-fab {
+  margin-top: -30px;
+}

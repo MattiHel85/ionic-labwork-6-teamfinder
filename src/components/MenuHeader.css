@@ -3,6 +3,11 @@ ion-fab {
   margin-right: 20px;
 }
 
+ion-fab {
+  margin-top: -38px;
+  margin-right: 20px;
+}
+
 ion-fab-button {
   --background: #F37D0F;
   --background-activated: #f8983e;

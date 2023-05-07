@@ -6,7 +6,7 @@ interface ContainerProps { }
 const Footer: React.FC<ContainerProps> = () => {
   return (
     <div className="footer">
-      <strong>{`team8`}</strong>
+      team8
     </div>
   );
 };

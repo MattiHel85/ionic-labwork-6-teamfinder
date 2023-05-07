@@ -12,7 +12,8 @@ const MenuHeader: React.FC<ContainerProps> = () => {
 
   return (
     <>
-      <IonHeader>
+
+       <IonHeader>
         <IonToolbar>
           <IonTitle class='header'><h1><strong>TEAMFINDER</strong></h1></IonTitle>
         </IonToolbar>

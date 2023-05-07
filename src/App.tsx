@@ -3,6 +3,9 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import MenuHeader from './components/MenuHeader';
+
+
 // import MenuHeader from './components/MenuHeader';
 import Header from './components/Header';
 import Signin from './pages/signin';
@@ -33,7 +36,7 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <Header />
+    <MenuHeader />
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home"><Home /></Route>

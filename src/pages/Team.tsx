@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonContent} from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonContent, useIonRouter} from '@ionic/react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import './Team.css';
@@ -24,6 +24,7 @@ const Teams: React.FC = () => {
   
   const [team, setTeam] = useState<TeamResult>();
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const router = useIonRouter();
 
   const { id } = useParams<TeamId>();
 
@@ -71,8 +72,8 @@ const Teams: React.FC = () => {
               </p>
             </div>
             <div className='buttonGroup'>
-              <IonButton color="#F37D0F" fill='outline' shape='round' className='buttonBack'>Back</IonButton>
-              {isLoggedIn && <IonButton shape='round' className='buttonEdit'>Edit</IonButton> }
+              <IonButton color="#F37D0F" fill='outline' shape='round' className='buttonBack' onClick={() => router.push('/teams')}>Back</IonButton>
+              {!isLoggedIn && <IonButton shape='round' className='buttonEdit' onClick={() => router.push(`/edit/team/${team?._id}`)}>Edit</IonButton> }
             </div>
           </IonCardContent>
         </IonCard>

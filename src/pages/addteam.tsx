@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 
-function Addteam() {
+function AddTeam() {
   return (
     <IonCard>
       <IonCardHeader>
@@ -15,4 +15,4 @@ function Addteam() {
     </IonCard>
   );
 }
-export default Addteam;
+export default AddTeam;

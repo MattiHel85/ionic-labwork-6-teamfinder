@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 
-function Signup() {
+function SignUp() {
   return (
     <IonCard>
       <IonCardHeader>
@@ -15,4 +15,4 @@ function Signup() {
     </IonCard>
   );
 }
-export default Signup;
+export default SignUp;

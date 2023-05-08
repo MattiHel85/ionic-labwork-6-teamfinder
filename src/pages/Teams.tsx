@@ -1,7 +1,5 @@
 import { IonContent, IonPage} from '@ionic/react';
 import { useEffect, useState } from 'react';
-import { IonReactRouter } from '@ionic/react-router';
-
 import {  IonGrid, IonRow, IonCol, IonItem, IonLabel } from '@ionic/react';
 import './Teams.css';
 
@@ -30,7 +28,6 @@ const Teams: React.FC = () => {
     }
     fetchTeams()
   }, [])
-  // console.log(teams[0]._id)
   return (
     <IonPage>
       <IonContent>
@@ -40,7 +37,7 @@ const Teams: React.FC = () => {
               teams.map((team) => (
                 <IonRow>
                   <IonCol>
-                    <IonItem className='teamHolder' routerLink={`/team/${team._id}`}>
+                    <IonItem className='teamHolder' href={`/team/${team._id}`}>
                       <img alt="Team badge" className='thumbnail' src={String(team.badgeUrl)} />
                       <IonLabel className='label'>{String(team.name)}</IonLabel>
                     </IonItem>

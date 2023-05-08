@@ -19,30 +19,29 @@ const MenuHeader: React.FC<ContainerProps> = () => {
         </IonToolbar>
       </IonHeader>
 
-  <IonContent className="ion-padding"> 
-    <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
-      <IonFabButton>
-        <IonIcon icon={menu}></IonIcon>
-      </IonFabButton>
-      <IonFabList side="bottom">
-        <IonFabButton routerLink="/home">
-              <IonLabel>home</IonLabel>
-        </IonFabButton>
-        <IonFabButton routerLink="/signin">
-               <IonLabel>sign in</IonLabel>
-        </IonFabButton>
-        <IonFabButton routerLink="/signup">
-              <IonLabel>sign up</IonLabel>
-        </IonFabButton>
-        <IonFabButton routerLink="/showteams">
-              <IonLabel>show teams</IonLabel>
-        </IonFabButton>
-        {!isLoggedIn && <IonFabButton routerLink="/addteam">
-              <IonLabel>add team</IonLabel>
-        </IonFabButton>}
-      </IonFabList>
-    </IonFab>
-  </IonContent>
+      <IonContent className="ion-padding"> 
+        <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
+          <IonFabButton>
+            <IonIcon icon={menu}></IonIcon>
+          </IonFabButton>
+          <IonFabList side="bottom">
+            <IonFabButton routerLink="/home">
+                  <IonLabel>home</IonLabel>
+            </IonFabButton>
+            <IonFabButton routerLink="/signin">
+                   <IonLabel>sign in</IonLabel>
+            </IonFabButton>
+            <IonFabButton routerLink="/signup">
+                  <IonLabel>sign up</IonLabel>
+            </IonFabButton>
+            <IonFabButton routerLink="/teams">
+                  <IonLabel>show teams</IonLabel>
+            </IonFabButton>
+            {!isLoggedIn && <IonFabButton routerLink="/addteam"><IonLabel>add team</IonLabel>
+            </IonFabButton>}
+          </IonFabList>
+        </IonFab>
+      </IonContent>
   </>
   );
 };

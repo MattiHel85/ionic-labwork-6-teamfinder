@@ -4,12 +4,14 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import MenuHeader from './components/MenuHeader';
+
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Teams from './pages/Teams';
 import Team from './pages/Team';
 import AddTeam from './pages/AddTeam';
 import EditTeam from './pages/EditTeam';
+
 
 
 /* Core CSS required for Ionic components to work properly */

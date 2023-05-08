@@ -1,0 +1,72 @@
+.container {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3 {
+    color: #F37D0F;
+    font-size: 35px !important;
+}
+
+.teamCard {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 450px;
+    border-radius: 25px;
+    box-shadow: 2px 3px 3px 2px black;
+}
+
+img {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.cardHeader {
+    width: 100%;
+    border-bottom: 5px solid #F37D0F;
+}
+
+.ionCardContent {
+    width: 100%;
+    background-color: #E5E0DA;
+}
+
+.cardContent {
+    width: 100%;
+    background-color: #E5E0DA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.cardContent p {
+    font-size: 15px;
+    color: #000000;
+    margin-top: 5px;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.buttonBack {
+    --color: #F37D0F;
+    margin: 25px;
+}
+
+.buttonEdit {
+    --background: #F37D0F;
+    margin: 25px;
+}
+

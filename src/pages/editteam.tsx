@@ -70,7 +70,7 @@ function EditTeam() {
                             labelPlacement='floating'
                             placeholder='enter text'
                             fill='outline'
-                            // defaultValue={team.badgeUrl} commented out so the app still works but this is how it should be (I think). It's not working right now because you need to define the interface, Like I have in the Teams.tsx file.
+                            value={badgeUrl}
                             onIonInput={(e) => setBadgeUrl(e.detail.value!)}
                         />
                         <IonInput

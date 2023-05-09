@@ -31,7 +31,7 @@ function AddTeam() {
     }
 
     const teamLink = id ? `/team/${id}` : '/team/:id';
-    
+
 
     return (
         <>
@@ -46,7 +46,7 @@ function AddTeam() {
                             labelPlacement='floating'
                             placeholder='enter text'
                             fill='outline'
-                            value={badgeUrl}
+                            defaultValue={badgeUrl}
                             onIonInput={(e) => setBadgeUrl(e.detail.value!)}
                         />
                         <IonInput
@@ -54,7 +54,7 @@ function AddTeam() {
                             label='team name'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={name}
+                            defaultValue={name}
                             onIonInput={(e) => setName(e.detail.value!)}
                         />
                         <IonInput
@@ -62,7 +62,7 @@ function AddTeam() {
                             label='team nickname'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={nickname}
+                            defaultValue={nickname}
                             onIonInput={(e) => setNickname(e.detail.value!)}
                         />
                         <IonInput
@@ -70,7 +70,7 @@ function AddTeam() {
                             label='founded'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={founded}
+                            defaultValue={founded}
                             onIonInput={(e) => setFounded(e.detail.value!)}
                         />
                         <IonInput
@@ -78,7 +78,7 @@ function AddTeam() {
                             label='ground name'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={groundName}
+                            defaultValue={groundName}
                             onIonInput={(e) => setGroundName(e.detail.value!)}
                         />
                         <IonInput
@@ -86,7 +86,7 @@ function AddTeam() {
                             label='ground capacity'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={groundCapacity}
+                            defaultValue={groundCapacity}
                             onIonInput={(e) => setGroundCapacity(e.detail.value!)}
                         />
                         <IonInput
@@ -94,7 +94,7 @@ function AddTeam() {
                             label='country'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={country}
+                            defaultValue={country}
                             onIonInput={(e) => setCountry(e.detail.value!)}
                         />
                         <IonInput
@@ -102,7 +102,7 @@ function AddTeam() {
                             label='league'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={league}
+                            defaultValue={league}
                             onIonInput={(e) => setLeague(e.detail.value!)}
                         />
                         <IonInput
@@ -110,7 +110,7 @@ function AddTeam() {
                             label='coach'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={coach}
+                            defaultValue={coach}
                             onIonInput={(e) => setCoach(e.detail.value!)}
                         />
                         <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Home'>back</IonButton>

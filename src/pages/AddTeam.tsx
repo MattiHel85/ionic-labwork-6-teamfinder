@@ -1,34 +1,57 @@
 import React, { useState } from 'react';
 import { IonButton, IonCard, IonCardContent, IonInput, IonTitle } from '@ionic/react';
 import './AddEditTeam.css';
+import { useParams } from 'react-router';
 
+interface TeamData {
 
-function AddTeam() {
+    badgeUrl: string,
+    name: string,
+    nickname: string,
+    founded: number,
+    groundName: string,
+    groundCapacity: number,
+    country: string,
+    league: string,
+    coach: string
+}
 
-    const [badgeUrl, setBadgeUrl] = useState("");
-    const [name, setName] = useState("");
-    const [nickname, setNickname] = useState("");
-    const [founded, setFounded] = useState("");
-    const [groundName, setGroundName] = useState("");
-    const [groundCapacity, setGroundCapacity] = useState("");
-    const [country, setCountry] = useState("");
-    const [league, setLeague] = useState("");
-    const [coach, setCoach] = useState("");
-    const [id, setId] = useState(null);
+type TeamId = {
+    id: string;
+}
 
-    const postData = () => {
-        const team = { badgeUrl, name, nickname, founded, groundName, groundCapacity, country, league, coach }
+const AddTeam: React.FC = () => {
+    const { id } = useParams<TeamId>();
+    const [formData, setFormData] = useState<TeamData>({
+        badgeUrl: '',
+        name: '',
+        nickname: '',
+        founded: 0,
+        groundName: '',
+        groundCapacity: 0,
+        country: '',
+        league: '',
+        coach: ''
+    });
+
+    const setFormValue = (key: keyof TeamData, value: string | number) => {
+        setFormData(prevState => ({
+            ...prevState,
+            [key]: value
+        }));
+    };
+
+    const postData = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
         fetch('https://football-teams-rest-api-assignment.onrender.com/api/add', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(team)
+            body: JSON.stringify(formData)
         })
             .then((response) => response.json())
-            .then((data) => {
-                setId(data.id);
-            });
-    }
+            .then((json) => console.log(json));
+    };
 
     const teamLink = id ? `/team/${id}` : '/team/:id';
 
@@ -45,73 +68,74 @@ function AddTeam() {
                             label='badge URL link'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            fill='outline'
-                            defaultValue={badgeUrl}
-                            onIonInput={(e) => setBadgeUrl(e.detail.value!)}
+                            value={formData.badgeUrl}
+                            onIonChange={(e) => setFormValue('badgeUrl', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='team name'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={name}
-                            onIonInput={(e) => setName(e.detail.value!)}
+                            value={formData.name}
+                            onIonChange={(e) => setFormValue('name', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='team nickname'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={nickname}
-                            onIonInput={(e) => setNickname(e.detail.value!)}
+                            value={formData.nickname}
+                            onIonChange={(e) => setFormValue('nickname', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='founded'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={founded}
-                            onIonInput={(e) => setFounded(e.detail.value!)}
+                            type='number'
+                            value={formData.founded}
+                            onIonChange={(e) => setFormValue('founded', parseInt(e.detail.value!))}
                         />
                         <IonInput
                             className='input-item'
                             label='ground name'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={groundName}
-                            onIonInput={(e) => setGroundName(e.detail.value!)}
+                            value={formData.groundName}
+                            onIonChange={(e) => setFormValue('groundName', e.detail.value!)}
+
                         />
                         <IonInput
                             className='input-item'
                             label='ground capacity'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={groundCapacity}
-                            onIonInput={(e) => setGroundCapacity(e.detail.value!)}
+                            value={formData.groundCapacity}
+                            onIonChange={(e) => setFormValue('groundCapacity', parseInt(e.detail.value!))}
                         />
                         <IonInput
                             className='input-item'
                             label='country'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={country}
-                            onIonInput={(e) => setCountry(e.detail.value!)}
+                            value={formData.country}
+                            onIonChange={(e) => setFormValue('country', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='league'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={league}
-                            onIonInput={(e) => setLeague(e.detail.value!)}
+                            value={formData.league}
+                            onIonChange={(e) => setFormValue('league', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='coach'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            defaultValue={coach}
-                            onIonInput={(e) => setCoach(e.detail.value!)}
+                            value={formData.coach}
+                            onIonChange={(e) => setFormValue('coach', e.detail.value!)}
                         />
                         <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Home'>back</IonButton>
                             <IonButton className='edit-button' type='submit' routerLink={teamLink}>add team</IonButton></div>

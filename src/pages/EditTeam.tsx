@@ -1,150 +1,150 @@
-import React, { useEffect, useState } from 'react';
-import { IonButton, IonCard, IonCardContent, IonInput, IonItem, IonTitle } from '@ionic/react';
+import React, { useState, useEffect } from 'react';
+import { IonButton, IonCard, IonCardContent, IonInput, IonTitle } from '@ionic/react';
 import './AddEditTeam.css';
+import { useParams } from 'react-router';
 
 
-function EditTeam() {
-    const [team, setTeam] = useState({});
-    const [badgeUrl, setBadgeUrl] = useState("");
-    const [name, setName] = useState("");
-    const [nickname, setNickname] = useState("");
-    const [founded, setFounded] = useState("");
-    const [groundName, setGroundName] = useState("");
-    const [groundCapacity, setGroundCapacity] = useState("");
-    const [country, setCountry] = useState("");
-    const [league, setLeague] = useState("");
-    const [coach, setCoach] = useState("");
+interface TeamData {
+    badgeUrl: string,
+    name: string,
+    nickname: string,
+    founded: number,
+    groundName: string,
+    groundCapacity: number,
+    country: string,
+    league: string,
+    coach: string,
+}
 
+type TeamId = {
+    id: string;
+};
 
-    const fetchTeam = async () => {
-        try {
-            const response = await fetch(`https://football-teams-rest-api-assignment.onrender.com/api/:id`)
-            if (!response.ok) {
-                throw new Error(`Failed to fetch team: ${response.status} ${response.statusText}`);
-            }
-            const data = await response.json()
-            setTeam(data)
-        } catch (error) {
-            console.error(error);
-        }
-    }
+const EditTeam: React.FC = () => {
+    const { id } = useParams<TeamId>();
+
+    const [formData, setFormData] = useState<TeamData>({
+        badgeUrl: '',
+        name: '',
+        nickname: '',
+        founded: 0,
+        groundName: '',
+        groundCapacity: 0,
+        country: '',
+        league: '',
+        coach: '',
+    });
+
 
     useEffect(() => {
-        fetchTeam()
-    }, [])
+        fetch(`https://football-teams-rest-api-assignment.onrender.com/api/${id}`)
+            .then((response) => response.json())
+            .then((team) => setFormData(team));
+    }, [id]);
 
-    const updateData = async () => {
-        const team = { badgeUrl, name, nickname, founded, groundName, groundCapacity, country, league, coach }
+    const setFormValue = (key: keyof TeamData, value: string) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [key]: value,
+        }));
+    };
 
-        try {
-            const response = await fetch(`https://football-teams-rest-api-assignment.onrender.com/api/update/:id`, {
-                method: 'PUT',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(team)
-            })
-            if (!response.ok) {
-                throw new Error(`Failed to update team: ${response.status} ${response.statusText}`);
-            }
-            await fetchTeam();
-        } catch (error) {
-            console.error(error);
+    const editData = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-        }
-    }
+        fetch(`https://football-teams-rest-api-assignment.onrender.com/api/update/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+    };
+
+    const teamLink = id ? `/team/${id}` : '/team/:id';
 
 
     return (
-
         <>
+            <IonTitle className="page-header">Edit Team</IonTitle>
 
-            <IonItem>
-                <IonTitle className='page-header'>Edit Team</IonTitle>
-            </IonItem>
-
-            <form onSubmit={updateData}>
-                <IonCard className='info-container'>
+            <form onSubmit={editData}>
+                <IonCard className="info-container">
                     <IonCardContent>
                         <IonInput
-                            className='input-item'
-                            label='badge URL link'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            fill='outline'
-                            value={badgeUrl}
-                            onIonInput={(e) => setBadgeUrl(e.detail.value!)}
+                            className="input-item"
+                            label="badge URL link"
+                            labelPlacement="floating"
+                            placeholder="enter text"
+                            value={formData.badgeUrl}
+                            onIonChange={(e) => setFormValue('badgeUrl', e.detail.value!)}
                         />
                         <IonInput
-                            className='input-item'
-                            label='team name'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            value={name}
-                            onIonInput={(e) => setName(e.detail.value!)}
+                            className="input-item"
+                            label="team name"
+                            labelPlacement="floating"
+                            placeholder="enter text"
+                            value={formData.name}
+                            onIonChange={(e) => setFormValue('name', e.detail.value!)}
                         />
                         <IonInput
-                            className='input-item'
-                            label='team nickname'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            value={nickname}
-                            onIonInput={(e) => setNickname(e.detail.value!)}
+                            className="input-item"
+                            label="team nickname"
+                            labelPlacement="floating"
+                            placeholder="enter text"
+                            value={formData.nickname}
+                            onIonChange={(e) => setFormValue('nickname', e.detail.value!)}
                         />
                         <IonInput
-                            className='input-item'
-                            label='founded'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            value={founded}
-                            onIonInput={(e) => setFounded(e.detail.value!)}
+                            className="input-item"
+                            label="founded"
+                            labelPlacement="floating"
+                            placeholder="enter text"
+                            type="number"
+                            value={formData.founded}
+                            onIonChange={(e) => setFormValue('founded', e.detail.value!)}
                         />
                         <IonInput
-                            className='input-item'
-                            label='ground name'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            value={groundName}
-                            onIonInput={(e) => setGroundName(e.detail.value!)}
+                            className="input-item"
+                            label="ground name"
+                            labelPlacement="floating"
+                            placeholder="enter text"
+                            value={formData.groundName}
+                            onIonChange={(e) => setFormValue('groundName', e.detail.value!)}
                         />
                         <IonInput
-                            className='input-item'
-                            label='ground capacity'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            value={groundCapacity}
-                            onIonInput={(e) => setGroundCapacity(e.detail.value!)}
-                        />
-                        <IonInput
-                            className='input-item'
-                            label='country'
-                            labelPlacement='floating'
-                            placeholder='enter text'
-                            value={country}
-                            onIonInput={(e) => setCountry(e.detail.value!)}
+                            className="input-item"
+                            label="ground capacity"
+                            labelPlacement="floating"
+                            placeholder="enter text"
+                            value={formData.groundCapacity}
+                            onIonChange={(e) => setFormValue('groundCapacity', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='league'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={league}
-                            onIonInput={(e) => setLeague(e.detail.value!)}
+                            value={formData.league}
+                            onIonChange={(e) => setFormValue('league', e.detail.value!)}
                         />
                         <IonInput
                             className='input-item'
                             label='coach'
                             labelPlacement='floating'
                             placeholder='enter text'
-                            value={coach}
-                            onIonInput={(e) => setCoach(e.detail.value!)}
+                            value={formData.coach}
+                            onIonChange={(e) => setFormValue('coach', e.detail.value!)}
                         />
-                        <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Home'>back</IonButton>
-                            <IonButton className='edit-button' type='submit' routerLink='team/:id'>apply edits</IonButton></div>
+                        <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Teams'>back</IonButton>
+                            <IonButton className='edit-button' type='submit' routerLink={teamLink}>apply edits</IonButton></div>
 
                     </IonCardContent>
                 </IonCard>
             </form>
         </>
-
     );
 }
+
 export default EditTeam;
+

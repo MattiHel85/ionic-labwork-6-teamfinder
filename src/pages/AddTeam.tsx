@@ -3,8 +3,8 @@ import { IonButton, IonCard, IonCardContent, IonInput, IonTitle } from '@ionic/r
 import './AddEditTeam.css';
 import { useParams } from 'react-router';
 
+//Create interface
 interface TeamData {
-
     badgeUrl: string,
     name: string,
     nickname: string,
@@ -43,7 +43,7 @@ const AddTeam: React.FC = () => {
 
     const postData = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        //Next steps would be to add error handling
         fetch('https://football-teams-rest-api-assignment.onrender.com/api/add', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
@@ -57,6 +57,8 @@ const AddTeam: React.FC = () => {
 
 
     return (
+        //We render the form where the the team information can be added.
+
         <>
             <IonTitle className='page-header'>Add Team</IonTitle>
 
@@ -68,7 +70,9 @@ const AddTeam: React.FC = () => {
                             label='badge URL link'
                             labelPlacement='floating'
                             placeholder='enter text'
+                            //The initial value is retrieved from the API, according to the team's id. In this case, the badge url.
                             value={formData.badgeUrl}
+
                             onIonChange={(e) => setFormValue('badgeUrl', e.detail.value!)}
                         />
                         <IonInput
@@ -137,6 +141,8 @@ const AddTeam: React.FC = () => {
                             value={formData.coach}
                             onIonChange={(e) => setFormValue('coach', e.detail.value!)}
                         />
+                        {/* Finally, the buttons. Back-button uses routerLink to direct the user to the teams list in /Teams.
+                        The apply edits button does not in itself actually update the data, it is done within each field. It only directs the user to the team's Team.tsx page */}
                         <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Home'>back</IonButton>
                             <IonButton className='edit-button' type='submit' routerLink={teamLink}>add team</IonButton></div>
 

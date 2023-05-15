@@ -1,6 +1,6 @@
 .page-header {
     font-size: 8vw;
-    display:block;
+    display: block;
     top: 7%;
     color: #F37D0F;
 }
@@ -25,16 +25,14 @@
     --padding-start: 10px;
     --padding-end: 20px;
     font-size: 12px;
-max-height: 10px;
+    max-height: 10px;
     width: auto;
 }
-
 
 .button-container {
     display: flex;
     justify-content: space-between;
 }
-
 
 .back-button {
     --background: #FFFFFF;

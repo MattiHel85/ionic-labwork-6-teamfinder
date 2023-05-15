@@ -150,4 +150,3 @@ const EditTeam: React.FC = () => {
 }
 
 export default EditTeam;
-

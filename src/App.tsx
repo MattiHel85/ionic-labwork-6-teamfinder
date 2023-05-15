@@ -8,7 +8,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Teams from './pages/Teams';
 import Team from './pages/Team';
-import AddTeam from './pages/AddTeam';
+import AddTeam from './pages/addteam';
 import EditTeam from './pages/EditTeam';
 
 

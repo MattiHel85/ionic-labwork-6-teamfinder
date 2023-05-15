@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IonButton, IonCard, IonCardContent, IonInput, IonItem, IonTitle } from '@ionic/react';
-import './AddEditTeam.css';
+import './EditTeam.css';
 
 
 function EditTeam() {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IonButton, IonCard, IonCardContent, IonInput, IonTitle } from '@ionic/react';
-import './AddEditTeam.css';
+import './AddTeam.css';
 
 
 function AddTeam() {

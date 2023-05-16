@@ -1,0 +1,41 @@
+ion-fab {
+  margin-top: -38px;
+  margin-right: 20px;
+}
+
+ion-fab {
+  margin-top: -38px;
+  margin-right: 20px;
+}
+
+ion-fab-button {
+  --background: #F37D0F;
+  --background-activated: #f8983e;
+  --background-hover: #c4640a;
+  --border-radius: 0px;
+  --box-shadow: none;
+  --color: black;
+  width: 175px;
+  margin: 5px;
+}
+
+ion-label {
+  color: #F37D0F;
+  background-color: #E5E0Da;
+  font-size: 20px;
+  font-weight: 700;
+  width: 175px;
+  padding: 10px 10px;
+}
+
+ion-fab-list {
+  background-color: #E5E0Da;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.header {
+  background: #F37D0F;
+}
+
+

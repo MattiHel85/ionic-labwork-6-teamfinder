@@ -1,11 +1,11 @@
 import React from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 
-function Showteams() {
+function SignUp() {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardTitle>Show teams</IonCardTitle>
+        <IonCardTitle>Sign up</IonCardTitle>
         <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
@@ -15,4 +15,4 @@ function Showteams() {
     </IonCard>
   );
 }
-export default Showteams;
+export default SignUp;

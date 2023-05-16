@@ -1,11 +1,11 @@
 import React from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 
-function Editteam() {
+function SignIn() {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardTitle>Edit team</IonCardTitle>
+        <IonCardTitle>Sign in</IonCardTitle>
         <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
@@ -15,4 +15,4 @@ function Editteam() {
     </IonCard>
   );
 }
-export default Editteam;
+export default SignIn;

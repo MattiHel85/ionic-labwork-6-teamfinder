@@ -1,30 +1,42 @@
-ion-fab-button {
-    --background: #F37D0F;
-    --background-activated: #f8983e;
-    --background-hover: #c4640a;
-    --border-radius: 15px;
-    --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
-      0px 1px 3px 1px rgba(0, 0, 0, 0.5);
-    --color: black;
-  }
+ion-fab {
+  margin-top: -38px;
+  margin-right: 20px;
+}
 
-  ion-fab-button {
-    width: 150px;
+ion-fab {
+  margin-top: -38px;
+  margin-right: 20px;
+}
+
+ion-fab-button {
+  --background: #F37D0F;
+  --background-activated: #f8983e;
+  --background-hover: #c4640a;
+  --border-radius: 0px;
+  --box-shadow: none;
+  --color: black;
+  width: 175px;
+  margin: 5px;
 }
 
 ion-label {
-  color: #663406;
+  color: #F37D0F;
+  background-color: #E5E0Da;
   font-size: 20px;
   font-weight: 700;
+  width: 175px;
+  padding: 10px 10px;
 }
 
 ion-fab-list {
-  background: #868685;
+  background-color: #E5E0Da;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .header {
-    background: #F37D0F;
-    }
+  background: #F37D0F;
+}
 
 ion-fab {
   margin-top: -30px;

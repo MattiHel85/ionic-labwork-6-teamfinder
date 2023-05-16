@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonFab, IonFabButton, IonFabList, IonIcon, IonLabel } from '@ionic/react';
+import { IonContent, IonButton, IonHeader, IonTitle, IonToolbar, IonFab, IonFabButton, IonFabList, IonIcon} from '@ionic/react';
 import { menu } from 'ionicons/icons';
 import './MenuHeader.css';
 
@@ -21,24 +21,24 @@ const MenuHeader: React.FC<ContainerProps> = () => {
 
   <IonContent className="ion-padding"> 
     <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
-      <IonFabButton>
+      <IonFabButton class="menu-icon">
         <IonIcon icon={menu}></IonIcon>
       </IonFabButton>
       <IonFabList side="bottom">
         <IonFabButton routerLink="/home">
-              <IonLabel>home</IonLabel>
+              <IonButton>home</IonButton>
         </IonFabButton>
         <IonFabButton routerLink="/signin">
-               <IonLabel>sign in</IonLabel>
+               <IonButton>sign in</IonButton>
         </IonFabButton>
         <IonFabButton routerLink="/signup">
-              <IonLabel>sign up</IonLabel>
+              <IonButton>sign up</IonButton>
         </IonFabButton>
         <IonFabButton routerLink="/showteams">
-              <IonLabel>show teams</IonLabel>
+              <IonButton>show teams</IonButton>
         </IonFabButton>
         {!isLoggedIn && <IonFabButton routerLink="/addteam">
-              <IonLabel>add team</IonLabel>
+              <IonButton>add team</IonButton>
         </IonFabButton>}
       </IonFabList>
     </IonFab>

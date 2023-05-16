@@ -28,6 +28,7 @@ const Teams: React.FC = () => {
     }
     fetchTeams()
   }, [])
+  
   return (
     <IonPage>
       <IonContent>

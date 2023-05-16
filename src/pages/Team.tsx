@@ -73,7 +73,7 @@ const Teams: React.FC = () => {
             </div>
             <div className='buttonGroup'>
               <IonButton color="#F37D0F" fill='outline' shape='round' className='buttonBack' onClick={() => router.push('/teams')}>Back</IonButton>
-              {!isLoggedIn && <IonButton shape='round' className='buttonEdit' onClick={() => router.push(`/edit/team/${team?._id}`)}>Edit</IonButton> }
+              {isLoggedIn && <IonButton shape='round' className='buttonEdit' onClick={() => router.push(`/edit/team/${team?._id}`)}>Edit</IonButton> }
             </div>
           </IonCardContent>
         </IonCard>

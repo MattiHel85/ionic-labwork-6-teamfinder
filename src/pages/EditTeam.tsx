@@ -48,7 +48,7 @@ const EditTeam: React.FC = () => {
   };
 
   const editData = (e: React.FormEvent<HTMLFormElement>) => {
-    //Next steps would be to add error handling to the functions
+    //Next steps would be to add error handling to the functionalities
     e.preventDefault();
     fetch(`https://football-teams-rest-api-assignment.onrender.com/api/update/${id}`, {
       method: 'PUT',
@@ -64,6 +64,7 @@ const EditTeam: React.FC = () => {
 
   return (
     //We render the form where the the team information can be edited and updated.
+    // Based on how the API is set up, all fields need to be updated for the data to be updated. 
     <>
 
       <IonTitle className="page-header">Edit Team</IonTitle>
@@ -138,7 +139,7 @@ const EditTeam: React.FC = () => {
               onIonChange={(e) => setFormValue('coach', e.detail.value!)}
             />
             {/* Finally, the buttons. Back-button uses routerLink to direct the user to the teams list in /Teams.
-            The apply edits button does not in itself actually update the data, it is done within each field. It only directs the user to the team's Team.tsx page */}
+            The apply edits button does not in itself actually update the data, it is done within each field and with the form's . It only directs the user to the team's Team.tsx page.*/}
             <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Teams'>back</IonButton>
               <IonButton className='edit-button' type='submit' routerLink={teamLink}>apply edits</IonButton></div>
 
@@ -150,3 +151,4 @@ const EditTeam: React.FC = () => {
 }
 
 export default EditTeam;
+

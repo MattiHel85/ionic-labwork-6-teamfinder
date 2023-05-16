@@ -43,15 +43,25 @@ const AddTeam: React.FC = () => {
 
     const postData = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        //Next steps would be to add error handling
+        // fetching from the api
         fetch('https://football-teams-rest-api-assignment.onrender.com/api/add', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
         })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
-    };
+          .then((response) => {
+            //Error handling
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Error: ' + response.status);
+            }
+          })
+          .then((json) => console.log(json))
+          .catch((error) => console.log(error.message));
+          
+        console.log(formData);
+      };
 
     const teamLink = id ? `/team/${id}` : '/team/:id';
 

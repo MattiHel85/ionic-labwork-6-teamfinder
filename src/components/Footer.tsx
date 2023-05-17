@@ -6,7 +6,7 @@ interface ContainerProps { }
 const Footer: React.FC<ContainerProps> = () => {
   return (
     <div className="footer">
-      team8
+      developed by team8
     </div>
   );
 };

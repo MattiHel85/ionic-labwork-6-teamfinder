@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -35,7 +36,10 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  
+  return (
+  
   <IonApp>
     <MenuHeader />
     <IonReactRouter>
@@ -54,6 +58,6 @@ const App: React.FC = () => (
     </IonReactRouter>
     <Footer />
   </IonApp>
-);
+)};
 
 export default App;

@@ -47,35 +47,26 @@ const SignIn = () => {
                     <div className="mb-3">
                         <IonInput type="email" placeholder="Enter email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} className="inputField" />
                         <small className="text-muted mx-2">We'll never share your email with anyone else.</small>
-                    </div>
-
+                    </div>  
                     <div className="mb-3">
                         <IonInput type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} className="inputField" />
                         <small className="text-muted mx-2">Make it memorable!</small>
                     </div>
                     <div className="d-flex justify-content-end">
                       <IonButton type="submit" className="inputButton">Sign in</IonButton>
-                    </div>
-
+                    </div>  
                     {signedIn ? (
                         <div className="d-flex justify-content-between align-items-center">
                             <p>You are signed in.</p>
-                          <IonButton onClick={handleSignOut} expand="block" className="signOutButton">Sign Out</IonButton>
+                          <IonButton onClick={handleSignOut} expand="block">Sign Out</IonButton>
                         </div>
                     ) : (
-                        ""
-                    )}
-
-                </form>
-          
+                        <p>You are not signed in.</p>
+                    )}  
+                </form>                    
             </div>
             {showSignUp && <SignUp />}
             <p className="mt-3">No account? <a href="/signup">Sign up!</a></p>
-           {/* <IonItem>
-           <IonItem ><h3 color="">No account?</h3></IonItem>
-           <IonItem routerLink="/SignUp"><h5>Sign up!</h5></IonItem>
-           </IonItem>  */}
-           
         </div>
     )}
     export default SignIn;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonFab, IonFabButton, IonFabList, IonIcon, IonLabel } from '@ionic/react';
+import { IonContent, IonButton, IonHeader, IonTitle, IonToolbar, IonFab, IonFabButton, IonFabList, IonIcon} from '@ionic/react';
 import { menu } from 'ionicons/icons';
 import './MenuHeader.css';
 
@@ -19,29 +19,30 @@ const MenuHeader: React.FC<ContainerProps> = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding"> 
-        <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
-          <IonFabButton>
-            <IonIcon icon={menu}></IonIcon>
-          </IonFabButton>
-          <IonFabList side="bottom">
-            <IonFabButton routerLink="/home">
-                  <IonLabel>home</IonLabel>
-            </IonFabButton>
-            <IonFabButton routerLink="/signin">
-                   <IonLabel>sign in</IonLabel>
-            </IonFabButton>
-            <IonFabButton routerLink="/signup">
-                  <IonLabel>sign up</IonLabel>
-            </IonFabButton>
-            <IonFabButton routerLink="/teams">
-                  <IonLabel>show teams</IonLabel>
-            </IonFabButton>
-            {!isLoggedIn && <IonFabButton routerLink="/addteam"><IonLabel>add team</IonLabel>
-            </IonFabButton>}
-          </IonFabList>
-        </IonFab>
-      </IonContent>
+  <IonContent className="ion-padding"> 
+    <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>      
+      <IonFabButton class="menu-icon">
+        <IonIcon icon={menu}></IonIcon>
+      </IonFabButton>
+      <IonFabList side="bottom">
+        <IonFabButton routerLink="/home">
+              <IonButton>home</IonButton>
+        </IonFabButton>
+        <IonFabButton routerLink="/signin">
+               <IonButton>sign in</IonButton>
+        </IonFabButton>
+        <IonFabButton routerLink="/signup">
+              <IonButton>sign up</IonButton>
+        </IonFabButton>
+        <IonFabButton routerLink="/showteams">
+              <IonButton>show teams</IonButton>
+        </IonFabButton>
+        {!isLoggedIn && <IonFabButton routerLink="/addteam">
+              <IonButton>add team</IonButton>
+        </IonFabButton>}
+      </IonFabList>
+    </IonFab>
+  </IonContent>
   </>
   );
 };

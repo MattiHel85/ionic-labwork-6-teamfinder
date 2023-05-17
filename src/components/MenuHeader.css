@@ -1,41 +1,59 @@
 ion-fab {
-  margin-top: -38px;
-  margin-right: 20px;
-}
-
-ion-fab {
-  margin-top: -38px;
-  margin-right: 20px;
+  margin-top: 0px;
+  margin-right: 0px;
+  width: 30%;
+  margin-top: -30px;
 }
 
 ion-fab-button {
-  --background: #F37D0F;
-  --background-activated: #f8983e;
-  --background-hover: #c4640a;
+  --background: #E5E0Da;
   --border-radius: 0px;
   --box-shadow: none;
   --color: black;
-  width: 175px;
-  margin: 5px;
+  width: 95px;
+  margin: 0px;
 }
+
+.menu-icon {
+  --background: #F37D0F;
+  --background-activated: #F37D0F;
+  --background-hover: #F37D0F;
+}
+
+ion-button {
+  --background: #E5E0Da;
+  --background-activated: #f5ad6a;
+  --background-hover: #f8983f;
+  --border-radius: 0px;
+  --box-shadow: none;
+  --color: #F37D0F;
+  --color-hover: #a5560b;
+  --color-activated:#f5ad6a;
+  width: 95px;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100px;
+  padding: 0px 0px 0px 0px;
+  text-transform: lowercase;
+}
+
 
 ion-label {
   color: #F37D0F;
   background-color: #E5E0Da;
-  font-size: 20px;
-  font-weight: 700;
-  width: 175px;
-  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100px;
+  padding: 12px 0px 12px 0px;
 }
 
 ion-fab-list {
   background-color: #E5E0Da;
   border-radius: 15px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .header {
   background: #F37D0F;
 }
-
-

@@ -5,10 +5,15 @@ import './SignIn.css'
 import SignUp from "./SignUp";
 import { IonInput, IonButton, IonContent, IonList, IonItem, IonLabel } from '@ionic/react';
 
-const SignIn = () => {
+
+interface SignInProps {
+    change: (value: boolean) => void;
+    signedIn: boolean;
+  }
+
+const SignIn: React.FC<SignInProps> = ({ change, signedIn }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [signedIn, setSignedIn] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
 
     const signIn = (e: any) => {
@@ -16,7 +21,7 @@ const SignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log(userCredential);
-                setSignedIn(true);
+                change(true);
             })
             .catch((error) => {
                 console.log(error);
@@ -32,7 +37,7 @@ const SignIn = () => {
     const handleSignOut = () => {
         signOut(auth)
             .then(() => {
-                setSignedIn(false);
+                change(false);
             })
             .catch((error) => {
                 console.log(error);

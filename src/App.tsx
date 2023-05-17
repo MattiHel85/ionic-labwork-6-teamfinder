@@ -37,7 +37,7 @@ import './theme/variables.css';
 setupIonicReact();
 
 const App: React.FC = () => {
-  
+  const [signedIn, setSignedIn] = useState(false);
   return (
   
   <IonApp>
@@ -45,7 +45,7 @@ const App: React.FC = () => {
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home"><Home /></Route>
-        <Route path="/signin"><SignIn /></Route>
+        <Route path="/signin"><SignIn change={setSignedIn} signedIn={signedIn}/></Route>
         <Route path="/signup"><SignUp /></Route>
         <Route path="/teams"><Teams /></Route>
         <Route path="/team/:id"><Team /></Route>

@@ -18,6 +18,10 @@ const SignIn: React.FC<SignInProps> = ({ change, signedIn }) => {
 
     const signIn = (e: any) => {
         e.preventDefault();
+        if (!email || !password) {
+            console.log("Email and password are required.");
+            return;
+        }
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log(userCredential);
@@ -51,11 +55,12 @@ const SignIn: React.FC<SignInProps> = ({ change, signedIn }) => {
                     <h2 className="d-flex justify-content-center mb-4">Sign in</h2>
                     <div className="mb-3">
                         <IonInput type="email" placeholder="Enter email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} className="inputField" />
-                        <small className="text-muted mx-2">We'll never share your email with anyone else.</small>
-                    </div>  
+                        <small className="text-muted mx-3">We'll never share your email with anyone.</small>
+                    </div>
+
                     <div className="mb-3">
                         <IonInput type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} className="inputField" />
-                        <small className="text-muted mx-2">Make it memorable!</small>
+                        <small className="text-muted mx-3">Or else you can't come in!</small>
                     </div>
                     <div className="d-flex justify-content-end">
                       <IonButton type="submit" className="inputButton">Sign in</IonButton>

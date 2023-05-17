@@ -30,6 +30,7 @@ function SignUp() {
           <div className="mb-3">
             <label>Password</label>
             <IonInput className='input-item' type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
+
           </div>
           <div className="d-flex justify-content-end">
             <IonButton type="submit" expand="block" >

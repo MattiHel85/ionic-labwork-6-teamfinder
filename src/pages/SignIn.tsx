@@ -46,12 +46,14 @@ const SignIn = () => {
                     <div className="mb-3">
                         <label>Email address</label>
                         <IonInput className="input-item" type="email" placeholder="Enter email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
+
                         <small className="text-muted">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div className="mb-3">
                         <label>Password</label>
                         <IonInput className="input-item" type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
+
                         <small className="text-muted">If you do not have an account Sign Up!</small>
                     </div>
                     <div className="d-flex justify-content-end">
@@ -66,7 +68,6 @@ const SignIn = () => {
                     ) : (
                         <p>You are not signed in.</p>
                     )}
-
                 </form> 
                 {showSignUp && <SignUp />}
                

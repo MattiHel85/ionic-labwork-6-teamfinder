@@ -46,6 +46,7 @@ body {
     --background-activated: #504B46;
     display: flex;
     width: 40%;
+    --border-radius: 20px !important;
 }
 
 .edit-button {
@@ -54,5 +55,5 @@ body {
     --background-activated: #504B46;
     display: flex;
     width: 40%;
-
+    --border-radius: 20px !important;
 }

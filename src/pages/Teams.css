@@ -28,3 +28,21 @@ h2 {
     font-size: 20px !important;
 }
 
+.back-button {
+    --background: #FFFFFF;
+    --color: #F37D0F;
+    --background-activated: #504B46;
+    display: flex;
+    width: 40%;
+    --border-radius: 20px !important;
+}
+
+.edit-button {
+    --background: #F37D0F;
+    --color: #FFFFFF;
+    --background-activated: #504B46;
+    display: flex;
+    width: 40%;
+    --border-radius: 20px !important;
+}
+

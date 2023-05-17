@@ -141,7 +141,7 @@ const EditTeam: React.FC = () => {
             {/* Finally, the buttons. Back-button uses routerLink to direct the user to the teams list in /Teams.
             The apply edits button does not in itself actually update the data, it is done within each field and with the form's . It only directs the user to the team's Team.tsx page.*/}
             <div className='button-container'><IonButton className='back-button' type='button' routerLink='/Teams'>back</IonButton>
-              <IonButton className='edit-button' type='submit' routerLink={teamLink}>apply edits</IonButton></div>
+              <IonButton className='edit-button' type='submit' routerLink={teamLink}>submit</IonButton></div>
 
           </IonCardContent>
         </IonCard>

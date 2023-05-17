@@ -29,8 +29,9 @@ ion-button {
   --color: #F37D0F;
   --color-hover: #a5560b;
   --color-activated:#f5ad6a;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: lowercase;
 }
 
 

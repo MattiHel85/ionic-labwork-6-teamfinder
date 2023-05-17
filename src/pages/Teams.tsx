@@ -32,25 +32,23 @@ const Teams: React.FC = () => {
   console.log(teams);
   
   return (
+    <IonContent>
         <IonGrid className='grid'>
             <h2>All teams</h2>
             <IonCol>
               <IonRow>
             {
               teams.map((team) => (
-                
-                  // <IonRow>
                     <IonItem className='teamHolder' href={`/team/${team._id}`}>
                       <img alt="Team badge" className='thumbnail' src={String(team.badgeUrl)} />
                       <IonLabel className='label'>{String(team.name)}</IonLabel>
-                    </IonItem>
-                  // </IonRow>
-                
+                    </IonItem>               
               ))
             }
             </IonRow>
           </IonCol>
         </IonGrid>
+    </IonContent>
   );
 };
 

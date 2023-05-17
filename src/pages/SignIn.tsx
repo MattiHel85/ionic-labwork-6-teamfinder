@@ -5,10 +5,15 @@ import './SignIn.css'
 import SignUp from "./SignUp";
 import { IonInput, IonButton, IonContent, IonList, IonItem, IonLabel } from '@ionic/react';
 
-const SignIn = () => {
+
+interface SignInProps {
+    change: (value: boolean) => void;
+    signedIn: boolean;
+  }
+
+const SignIn: React.FC<SignInProps> = ({ change, signedIn }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [signedIn, setSignedIn] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
 
     const signIn = (e: any) => {
@@ -20,7 +25,7 @@ const SignIn = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log(userCredential);
-                setSignedIn(true);
+                change(true);
             })
             .catch((error) => {
                 console.log(error);
@@ -36,7 +41,7 @@ const SignIn = () => {
     const handleSignOut = () => {
         signOut(auth)
             .then(() => {
-                setSignedIn(false);
+                change(false);
             })
             .catch((error) => {
                 console.log(error);
@@ -59,27 +64,19 @@ const SignIn = () => {
                     </div>
                     <div className="d-flex justify-content-end">
                       <IonButton type="submit" className="inputButton">Sign in</IonButton>
-                    </div>
-
+                    </div>  
                     {signedIn ? (
                         <div className="d-flex justify-content-between align-items-center">
                             <p>You are signed in.</p>
-                          <IonButton onClick={handleSignOut} expand="block" className="signOutButton">Sign Out</IonButton>
+                          <IonButton onClick={handleSignOut} expand="block">Sign Out</IonButton>
                         </div>
                     ) : (
-                        ""
-                    )}
-
-                </form>
-          
+                        <p>You are not signed in.</p>
+                    )}  
+                </form>                    
             </div>
             {showSignUp && <SignUp />}
             <p className="mt-3">No account? <a href="/signup">Sign up!</a></p>
-           {/* <IonItem>
-           <IonItem ><h3 color="">No account?</h3></IonItem>
-           <IonItem routerLink="/SignUp"><h5>Sign up!</h5></IonItem>
-           </IonItem>  */}
-           
         </div>
     )}
     export default SignIn;

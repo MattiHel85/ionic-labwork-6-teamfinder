@@ -3,12 +3,11 @@ import { IonContent, IonButton, IonHeader, IonTitle, IonToolbar, IonFab, IonFabB
 import { menu } from 'ionicons/icons';
 import './MenuHeader.css';
 
-import { useState } from 'react';
+interface SignInProps {
+  signedIn: boolean;
+}
 
-interface ContainerProps { }
-
-const MenuHeader: React.FC<ContainerProps> = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+const MenuHeader: React.FC<SignInProps> = ({ signedIn }) => {
 
   return (
     <>
@@ -37,7 +36,7 @@ const MenuHeader: React.FC<ContainerProps> = () => {
         <IonFabButton routerLink="/teams">
               <IonButton>teams</IonButton>
         </IonFabButton>
-        {!isLoggedIn && <IonFabButton routerLink="/addteam">
+        {signedIn && <IonFabButton routerLink="/addteam">
               <IonButton>add team</IonButton>
         </IonFabButton>}
       </IonFabList>

@@ -9,7 +9,7 @@ import { IonInput, IonButton, IonContent, IonList, IonItem, IonLabel } from '@io
 interface SignInProps {
     change: (value: boolean) => void;
     signedIn: boolean;
-  }
+}
 
 const SignIn: React.FC<SignInProps> = ({ change, signedIn }) => {
     const [email, setEmail] = useState("");

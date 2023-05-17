@@ -13,6 +13,10 @@ const SignIn = () => {
 
     const signIn = (e: any) => {
         e.preventDefault();
+        if (!email || !password) {
+            console.log("Email and password are required.");
+            return;
+        }
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log(userCredential);

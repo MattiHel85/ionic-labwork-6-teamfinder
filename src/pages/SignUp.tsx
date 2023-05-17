@@ -11,6 +11,10 @@ function SignUp() {
 
   const handleSignUp = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    if (!email || !password) {
+      console.log("Email and password are required.");
+      return;
+    }
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
@@ -18,6 +22,8 @@ function SignUp() {
       .catch((error) => {
         console.log(error);
       });
+    setEmail("");
+    setPassword("");
   };
   return (
       <div className="container d-flex flex-column align-items-center">
@@ -26,11 +32,11 @@ function SignUp() {
           <h2 className="d-flex justify-content-center mb-4">Sign up</h2>
           <div className="mb-3">
             <IonInput type="email" placeholder="Enter email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} className="inputField" />
-            <small className="text-muted mx-2">We'll never share your email with anyone else.</small>
+            <small className="text-muted mx-3">We'll never share your email with anyone.</small>
           </div>
           <div className="mb-3">
             <IonInput type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} className="inputField" />
-            <small className="text-muted mx-2">Make it memorable!</small>
+            <small className="text-muted mx-3">Make it memorable!</small>
           </div>
           <div className="d-flex justify-content-end">
             <IonButton type="submit" className="inputButton" >

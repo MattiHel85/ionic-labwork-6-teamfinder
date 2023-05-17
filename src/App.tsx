@@ -48,7 +48,7 @@ const App: React.FC = () => {
         <Route path="/signin"><SignIn change={setSignedIn} signedIn={signedIn}/></Route>
         <Route path="/signup"><SignUp /></Route>
         <Route path="/teams"><Teams /></Route>
-        <Route path="/team/:id"><Team /></Route>
+        <Route path="/team/:id"><Team signedIn={signedIn}/></Route>
         <Route path="/addteam"><AddTeam /></Route>
         <Route path="/edit/team/:id"><EditTeam /></Route>
         <Route exact path="/">

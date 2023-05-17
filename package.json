@@ -16,7 +16,6 @@
     "@types/firebase": "^3.2.1",
     "@types/jest": "^26.0.20",
     "@types/node": "^12.19.15",
-    "@types/react": "^18.0.17",
     "@types/react-bootstrap": "^0.32.32",
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.11",
@@ -68,6 +67,7 @@
   "devDependencies": {
     "@capacitor/cli": "4.7.3",
     "@firebase/app-types": "^0.9.0",
+    "@types/react": "^18.2.6",
     "react-scripts": "5.0.1"
   },
   "description": "An Ionic project"

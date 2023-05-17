@@ -28,28 +28,27 @@ const Teams: React.FC = () => {
     }
     fetchTeams()
   }, [])
+
+  console.log(teams);
   
   return (
-    <IonPage>
-      <IonContent>
+    <IonContent>
         <IonGrid className='grid'>
-            <h3><strong>All teams</strong></h3>
+            <h2>All teams</h2>
+            <IonCol>
+              <IonRow>
             {
               teams.map((team) => (
-                <IonRow>
-                  <IonCol>
                     <IonItem className='teamHolder' href={`/team/${team._id}`}>
                       <img alt="Team badge" className='thumbnail' src={String(team.badgeUrl)} />
                       <IonLabel className='label'>{String(team.name)}</IonLabel>
-                    </IonItem>
-                  </IonCol>
-                </IonRow>
+                    </IonItem>               
               ))
             }
-          
+            </IonRow>
+          </IonCol>
         </IonGrid>
-      </IonContent>
-    </IonPage>
+    </IonContent>
   );
 };
 

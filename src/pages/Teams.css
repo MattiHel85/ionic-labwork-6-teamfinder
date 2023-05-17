@@ -2,17 +2,20 @@
     border-right: 5px solid #F37D0F;
     padding: 5px;
     margin-top: 15px;
-    width: 100px;
+    width: 70px;
 }
 
 .grid {
-    margin: 50px 50px;
+    margin: 70px 0px;
+}
+.teamHolder {
+    width: 100%;
 }
 
 
-h3 {
+h2 {
     color: #F37D0F;
-    font-size: 35px !important;
+    /* font-size: 35px !important; */
     display: flex;
     justify-content: center;
 }
@@ -22,8 +25,24 @@ h3 {
     color: #F37D0F !important;
     border: #F37D0F !important;
     padding-left: 20px;
+    font-size: 20px !important;
 }
 
-img {
-    width: 300px;
+.back-button {
+    --background: #FFFFFF;
+    --color: #F37D0F;
+    --background-activated: #504B46;
+    display: flex;
+    width: 40%;
+    --border-radius: 20px !important;
 }
+
+.edit-button {
+    --background: #F37D0F;
+    --color: #FFFFFF;
+    --background-activated: #504B46;
+    display: flex;
+    width: 40%;
+    --border-radius: 20px !important;
+}
+

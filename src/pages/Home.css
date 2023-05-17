@@ -32,27 +32,28 @@ ion-title {
     position: absolute;
     left: 10%;
     right: 10%;
-    top: 31%;
-    height: 250px;
+    top: 30%;
+    min-height: 240px;
+    max-height: 280px;
     transform: translateY(-50%);
     background: rgb(239,234,229,0.56);
     box-shadow: 2px 10px 8px 0px rgba(107, 107, 107, 0.4), 2px 10px 8px 0px rgb(177, 177, 177, 0.19);
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
   }
   
   .welcome-container-h1{
-    font-size: 20px;
+    font-size: 18px;
     line-height: 0px;
     color: #504B46;
     font-weight: 900;
-    margin: 30px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
   }
   
   .welcome-container-p {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 15px;
+    line-height: 22px;
     color: #504B46;
     margin: 20px 20px 30px 20px;
     padding: 0px;
@@ -65,8 +66,8 @@ ion-title {
     left: 10%;
     right: 10%;
     top: 68%;
-    height: 250px;
-  /*  height: 200px; */
+    min-height: 240px;
+    max-height: 280px;
     transform: translateY(-50%);
     background: rgb(239,234,229,0.56);
     box-shadow: 2px 10px 8px 0px rgba(107, 107, 107, 0.4), 2px 10px 8px 0px rgb(177, 177, 177, 0.19);
@@ -75,16 +76,16 @@ ion-title {
   }
   
   .contact-us-container-h1 {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 0px;
     color: #504B46;
     font-weight: 900;
-    margin: 30px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
   }
   
   .contact-us-container-p {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 15px;
+    line-height: 22px;
     color: #504B46;
     margin: 20px 20px 30px 20px;
     padding: 0px;

@@ -49,6 +49,7 @@ const EditTeam: React.FC = () => {
 
   const editData = (e: React.FormEvent<HTMLFormElement>) => {
     //Next steps would be to add error handling to the functionalities
+    
     e.preventDefault();
     fetch(`https://football-teams-rest-api-assignment.onrender.com/api/update/${id}`, {
       method: 'PUT',
@@ -63,7 +64,6 @@ const EditTeam: React.FC = () => {
   const teamLink = id ? `/team/${id}` : '/team/:id';
 
   return (
-    //We render the form where the the team information can be edited and updated.
     // Based on how the API is set up, all fields need to be updated for the data to be updated. 
     <>
 

@@ -71,7 +71,6 @@ const AddTeam: React.FC = () => {
 
         <>
             <IonTitle className='page-header'>Add Team</IonTitle>
-
             <form onSubmit={postData}>
                 <IonCard className='info-container'>
                     <IonCardContent>

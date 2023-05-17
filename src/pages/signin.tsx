@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import './Home.css';
-import SignUp from "./SignUp";
-import { IonInput, IonButton, IonContent, IonList, IonItem, IonLabel } from '@ionic/react';
+import './SignIn.css'
+import SignUp from "./signup";
+import { IonInput, IonButton, IonContent, IonList, IonItem, IonLabel, IonCard } from '@ionic/react';
 
 const SignIn = () => {
     const [email, setEmail] = useState("");
@@ -40,19 +40,18 @@ const SignIn = () => {
     };
 
     return (
-        <div className="d-flex flex-column align-items-center" style={{ minHeight: '100vh' }}>
-            <div className="d-flex justify-content-center">
-                <form onSubmit={signIn} style={{ width: '100%', maxWidth: '75rem', backgroundColor: 'rgb(229, 224, 218)', padding: '20px', borderRadius: '20px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)' }}>
+        <IonCard className='info-container'>
+                <form onSubmit={signIn} >
                     <h1 style={{ color: 'rgb(255, 102, 0)', textAlign: 'center', marginBottom: '20px' }}>Sign in</h1>
                     <div className="mb-3">
                         <label>Email address</label>
-                        <IonInput type="email" placeholder="Enter email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
+                        <IonInput className="input-item" type="email" placeholder="Enter email" value={email} onIonChange={(e) => setEmail(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
                         <small className="text-muted">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div className="mb-3">
                         <label>Password</label>
-                        <IonInput type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
+                        <IonInput className="input-item" type="password" placeholder="Password" value={password} onIonChange={(e) => setPassword(e.detail.value!)} style={{ borderRadius: '20px', backgroundColor: 'white' }} />
                         <small className="text-muted">If you do not have an account Sign Up!</small>
                     </div>
                     <div className="d-flex justify-content-end">
@@ -68,16 +67,15 @@ const SignIn = () => {
                         <p>You are not signed in.</p>
                     )}
 
-                </form>
-          
-            </div>
-            {showSignUp && <SignUp />}
-            <br />
-           <IonItem lines="full">
-           <IonItem ><h3 color="">No account?</h3></IonItem>
-           <IonItem routerLink="/SignUp"><h5>Sign up!</h5></IonItem>
-           </IonItem> 
-           
-        </div>
+                </form> 
+                {showSignUp && <SignUp />}
+               
+               <IonItem lines="full" className="ionitem">
+               <IonItem  className="ionitem">No account?</IonItem>
+               <IonButton routerLink="/signup">Sign up!</IonButton>
+               </IonItem> 
+               
+               </IonCard>
+               
     )}
     export default SignIn;

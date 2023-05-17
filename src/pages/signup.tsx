@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { IonInput, IonButton, IonItem, IonPage, IonCard } from '@ionic/react';
-import Home from './Home';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
-import SignIn from './signin';
 import './SignUp.css'
 
 function SignUp() {

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import './SignIn.css'
-import SignUp from "./signup";
-import { IonInput, IonButton, IonContent, IonList, IonItem, IonLabel, IonCard } from '@ionic/react';
+import SignUp from './SignUp'
+import { IonInput, IonButton, IonItem, IonCard } from '@ionic/react';
 
 const SignIn = () => {
     const [email, setEmail] = useState("");

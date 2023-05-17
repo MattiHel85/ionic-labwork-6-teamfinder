@@ -1,10 +1,23 @@
 import { useState } from 'react';
 import { IonInput, IonButton, IonItem } from '@ionic/react';
-import Home from './Home';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 
 function SignUp() {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignUp = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
       <div>
       <h1 className="d-flex justify-content-center">Sign up</h1>

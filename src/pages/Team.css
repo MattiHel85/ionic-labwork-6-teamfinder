@@ -61,12 +61,22 @@ img {
 }
 
 .buttonBack {
+    --background: #FFFFFF;
     --color: #F37D0F;
-    margin: 25px;
+    --background-activated: #504B46;
+    display: flex;
+    width: 40%;
+    --border-radius: 20px !important;
 }
 
 .buttonEdit {
     --background: #F37D0F;
-    margin: 25px;
+    --color: #FFFFFF;
+    --background-activated: #504B46;
+    display: flex;
+    width: 40%;
+    --border-radius: 20px !important;
 }
+
+
 

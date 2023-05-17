@@ -24,18 +24,13 @@ ion-button {
   --background: #E5E0Da;
   --background-activated: #f5ad6a;
   --background-hover: #f8983f;
-  --border-radius: 0px;
+  --border-style: none !important;
   --box-shadow: none;
   --color: #F37D0F;
   --color-hover: #a5560b;
   --color-activated:#f5ad6a;
-  width: 95px;
-  margin: 0px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  width: 100px;
-  padding: 0px 0px 0px 0px;
-  text-transform: lowercase;
 }
 
 
@@ -50,10 +45,11 @@ ion-label {
 
 ion-fab-list {
   background-color: #E5E0Da;
-  border-radius: 15px;
-  padding: 5px;
+  border-radius: 5px;
+  padding: 25px;
 }
 
-.header {
-  background: #F37D0F;
+.toolbar-title-default {
+  --background: #F37D0F;
+  padding: 0px 20px;
 }

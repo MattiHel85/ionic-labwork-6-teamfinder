@@ -13,9 +13,9 @@ const MenuHeader: React.FC<ContainerProps> = () => {
   return (
     <>
 
-       <IonHeader>
-        <IonToolbar>
-          <IonTitle class='header'><h1><strong>TEAMFINDER</strong></h1></IonTitle>
+       <IonHeader >
+        <IonToolbar class='header'>
+          <IonTitle ><h1><strong>TEAMFINDER</strong></h1></IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -34,8 +34,8 @@ const MenuHeader: React.FC<ContainerProps> = () => {
         <IonFabButton routerLink="/signup">
               <IonButton>sign up</IonButton>
         </IonFabButton>
-        <IonFabButton routerLink="/showteams">
-              <IonButton>show teams</IonButton>
+        <IonFabButton routerLink="/teams">
+              <IonButton>teams</IonButton>
         </IonFabButton>
         {!isLoggedIn && <IonFabButton routerLink="/addteam">
               <IonButton>add team</IonButton>

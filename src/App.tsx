@@ -41,7 +41,7 @@ const App: React.FC = () => {
   return (
   
   <IonApp>
-    <MenuHeader />
+    <MenuHeader signedIn={signedIn}/>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home"><Home /></Route>
